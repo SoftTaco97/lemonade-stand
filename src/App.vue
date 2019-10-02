@@ -1,28 +1,65 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- appHeader -->
+    <appHeader />
+
+    <!-- main -->
+    <main>
+      <md-content class="md-elevation-1">
+        <div class="md-layout md-gutter md-alignment-center-center">
+          <app-stats-key />
+          <app-stats />
+          <app-options-key />
+          <app-options />
+        </div>
+      </md-content>
+    </main>
+    <!-- end main -->
+
+    <!-- appFooter -->
+    <appFooter />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+// Components
+import appHeader from './components/Header.vue';
+import appFooter from './components/Footer.vue';
+import appStatsKey from './components/StatsKey.vue';
+import appStats from './components/Stats.vue';
+import appOptionsKey from './components/OptionsKey.vue';
+import appOptions from './components/Options.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    appHeader,
+    appFooter,
+    appStatsKey,
+    appStats,
+    appOptionsKey,
+    appOptions
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  main {
+    padding: 2em;
+  }
+  .items ul li div div, 
+  .stats ul li div div {
+    border-bottom: 1px solid lightgray;
+    display: inline-block;
+  }
+
+  .items ul li div div {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .stats ul li div div {
+    text-align: left;
+  }
 </style>
