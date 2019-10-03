@@ -2,13 +2,13 @@
   <div class="md-layout-item md-size-25 stats">
     <md-list>
         <md-list-item>
-            0.00 $
+            {{ total }} $
         </md-list-item>
         <md-list-item>
-            0
+            {{ employees }}
         </md-list-item>
         <md-list-item>
-            0
+            {{ managers }}
         </md-list-item>
     </md-list>
     </div>
@@ -16,6 +16,20 @@
 
 <script>
 export default {
-    name: 'stats'
+    name: 'stats',
+    props: {
+        total: {
+            type: Number, 
+            required: true
+        },
+        employees: {
+            type: Number,
+            required: true
+        },
+        managers: {
+            type: Number,
+            required: true
+        }
+    }
 }
 </script>
